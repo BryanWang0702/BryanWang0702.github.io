@@ -1,5 +1,6 @@
 ---
-layout: home
+layout: page
+title: Xueqiang Wang
 ---
 
 ![Xueqiang Wang](https://github.com/BryanWang0702/BryanWang0702.github.io/new_good_one.jpg){:.ioda}
