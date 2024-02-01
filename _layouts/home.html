@@ -1,19 +1,17 @@
 --- layout: default ---
 <header>
     <h1>{{ site.title }}</h1>
-    <img src="../new_good_one.jpg" style="width: 250px; height: 333px;" alt="Xueqiangwang.jpg" />
-    <br/>
-    <p>I am currently a research assistant at the <a href="https://bianlab.site">Bian Lab</a>. My reserach interests including sleep EEG/EMG analysis, animal behaviors, neuroscience about sleep.
-
-    </p>
-    <p>Brfore joining the Bian Lab, I was a member of <a href="https://cqutnlp.com">
-      Natural Languages Processing Laboratory of CQUT</a>, where I mainly researched text mining, text generation and text retrival. I received the B.S. degree from Chongqing University of Technology in 2023. I am going to do my phd in 2024.
-
-    </p>
-
     <br/> {%-if site.theme_config.show_description-%}
     <p>{{ site.description }}</p>
     {%-endif-%}
 </header>
+<img src="../new_good_one.jpg" style="width: 250px; height: 333px;" alt="Xueqiangwang.jpg" />
+<br/>
+<p>I am currently a research assistant at the <a href="https://bianlab.site">Bian Lab</a>. My reserach interests including sleep EEG/EMG analysis, animal behaviors, neuroscience about sleep.
 
+</p>
+<p>Brfore joining the Bian Lab, I was a member of <a href="https://cqutnlp.com">
+      Natural Languages Processing Laboratory of CQUT</a>, where I mainly researched text mining, text generation and text retrival. I received the B.S. degree from Chongqing University of Technology in 2023. I am going to do my phd in 2024.
+
+</p>
 {%-include menu_item.html collection=site.data.menu.entries-%} {{ content }}
