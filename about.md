@@ -5,6 +5,22 @@ title: About
 
 Lorem ipsum[^1] dolor sit amet, consectetur adipiscing elit. Pellentesque vel lacinia neque. Praesent nulla quam, ullamcorper in sollicitudin ac, molestie sed justo. Cras aliquam, sapien id consectetur accumsan, augue magna faucibus ex, ut ultricies turpis tortor vel ante. In at rutrum tellus.
 
+## Table of contents
+
+- [Table of contents](#table-of-contents)
+- [The start](#the-start)
+- [The middle](#the-middle)
+
+Mauris viverra dictum ultricies. Vestibulum quis ipsum euismod, facilisis metus sed, varius ipsum.
+
+## [The start](#the-start)
+
+Fusce non velit cursus ligula mattis convallis vel at metus. Sed pharetra tellus massa, non elementum eros vulputate non.
+
+## [The middle](#the-middle)
+
+Proin quis velit et eros auctor laoreet. Aenean eget nibh odio. Suspendisse mollis enim pretium, fermentum urna vitae, egestas purus.
+
 # Sample heading 1
 
 ## Sample heading 2
