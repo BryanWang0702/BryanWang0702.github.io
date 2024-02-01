@@ -3,31 +3,31 @@ layout: post
 slug: MiSleep manual
 ---
 
-![logo](/_posts/resources/entire_logo.png)
+![logo](resources/entire_logo.png)
 
 MiSleep is an easy-to-use software for sleep EEG/EMG data scoring and analysis.
 
 ## Table of contents
 
-- [Installation](#Installation)
-- [Launch MiSleep](#Launch-MiSleep)
-- [Initial window](#Initial-window)
-  - [Load data](#Load-data)
-  - [Auto stage](#Auto-stage)
-  - [Tools](#Tools)
-- [Main window](#Main-window)
-  - [Signal area](#Signal-area)
-  - [Hypnogram area](#Hypnogram-area)
-  - [Toolbox area](#Toolbox-area)
-  - [Channel controller](#Channel-controller)
-  - [Label](#Label)
-  - [Filter](#Filter)
-  - [Analysis](#Analysis)
-  - [Time controller](#Time-controller)
-  - [Save data](#Save-data)
-- [Others](#Others)
+- [Installation](#installation)
+- [Launch MiSleep](#launch-miSleep)
+- [Initial window](#initial-window)
+  - [Load data](#load-data)
+  - [Auto stage](#auto-stage)
+  - [Tools](#tools)
+- [Main window](#main-window)
+  - [Signal area](#signal-area)
+  - [Hypnogram area](#hypnogram-area)
+  - [Toolbox area](#toolbox-area)
+  - [Channel controller](#channel-controller)
+  - [Label](#label)
+  - [Filter](#filter)
+  - [Analysis](#analysis)
+  - [Time controller](#time-controller)
+  - [Save data](#save-data)
+- [Others](#others)
 
-## [Installation](#Installation)
+## [Installation](#installation)
 
 The installation of MiSleep is very easy, what you need to do is just unzip the `MiSleep.rar` to your target directory.
 
@@ -41,7 +41,7 @@ Start MiSleep by clicking on the `MiSleep.exe` in the MiSleep folder. MiSleep ma
 
 The initial window of MiSleep will show up, now we are in the `Load data` part.
 
-![Load data](/_posts/resources/Pasted%20image%2020240117165205.png)
+![Load data](resources/Pasted%20image%2020240117165205.png)
 
 - You need to set the **sampling rate** to your own, which will be stored in the `storesListing.txt` if you use [TDT's synapse](https://www.tdt.com/component/synapse-software/) for recording.
 
@@ -52,7 +52,7 @@ The initial window of MiSleep will show up, now we are in the `Load data` part.
 
 - If your channel number is incorrect, MiSleep will raise an error, see the picture below. It means there are 6 channels in your data, but you entered 4.
 
-![error](/_posts/resources/Pasted%20image%2020240117165413.png)
+![error](resources/Pasted%20image%2020240117165413.png)
 
 - <b style="color: red">Time acquisition</b> is also a very important parameter, it is when you start recording data. This datetime will be stored in the `LABEL.txt`, and the following analysis will all based on it. Default is the time you opened MiSleep. It will be stored in the `storesListing.txt` file if you use [TDT's synapse](https://www.tdt.com/component/synapse-software/) for recording.
 
@@ -68,7 +68,7 @@ The initial window of MiSleep will show up, now we are in the `Load data` part.
 
 In the `Auto stage` part, you can use the lightGBM (currently) model to automatically score the sleep EEG/EMG data.
 
-![auto stage](/_posts/resources/Pasted%20image%2020240118172733.png)
+![auto stage](resources/Pasted%20image%2020240118172733.png)
 
 - Choose a data file, set the sampling rate, epoch length and time acquisition, they are all the same with those we mentioned in the previous section. here the time acquisition is also very important.
 
@@ -84,23 +84,23 @@ In the `Auto stage` part, you can use the lightGBM (currently) model to automati
 
 Here we have two useful tools currently, one can transfer the label file into a `excel` file, while another can help us get the `hypnogram`.
 
-![Tools](/_posts/resources/Pasted%20image%2020240117185212.png)
+![Tools](resources/Pasted%20image%2020240117185212.png)
 
 - **Select a MiSleep label file**, and output a `.xlsx` file. The output excel file have 4 sheets most of the case. The first sheet is all states' analysis, each sleep bout gets the start and end datetime, relative seconds from the record beginning, and for each hour, there is a `Marker`. Also, there are some rough statistics about each hour. The other sheets are almost the same, except the statistics. See the picture below. With this excel file, you can do more downstream analysis.
 
-![excel](/_posts/resources/Pasted%20image%2020240117190507.png)
+![excel](resources/Pasted%20image%2020240117190507.png)
 
 - With the selected label file, you can also get the hypnogram. There is a colormap help you specify one color for your hypnogram. Also, by setting the `start time` and `end time` (the duration should greater than 100 seconds, means end time - start time > 100), you can get the hypnogram for a subset of data. Defaults are 0 for `start time` and 99 for `end time`, which represents the whole data.
 
 ## [Main window](#main-window)
 
-![main window](/_posts/resources/Pasted%20image%2020240117192521.png)
+![main window](resources/Pasted%20image%2020240117192521.png)
 
 The main window consists of three parts, upper left is the signal area, bottom left is the hypnogram area, and in the right is the toolbox.
 
 ### [Signal area](#signal-area)
 
-![signals](/_posts/resources/Pasted%20image%2020240117204840.png)
+![signals](resources/Pasted%20image%2020240117204840.png)
 
 The signal area shows the signals, spectrum graph, and a slider bar in the bottom.
 
@@ -114,7 +114,7 @@ The signal area shows the signals, spectrum graph, and a slider bar in the botto
 
 ### [Hypnogram area](#hypnogram-area)
 
-![hypnogram](/_posts/resources/Pasted%20image%2020240118163202.png)
+![hypnogram](resources/Pasted%20image%2020240118163202.png)
 
 The hypnogram shows the sleep state's change by time. Here it's four states, which is the same with the [Label](#label). You can click anywhere in the hypnogram area, the signal area will jump to the time you just clicked.
 
@@ -122,20 +122,20 @@ The hypnogram shows the sleep state's change by time. Here it's four states, whi
 
 #### [Channel controller](#channel-controller)
 
-![](/_posts/resources/Pasted%20image%2020240117203734.png)
+![](resources/Pasted%20image%2020240117203734.png)
 
 Here shows the initial channels of your data, you can select one or multiple channel to `show`, `hide` or `delete`. If you use the filter function, MiSleep will add a channel here. Many functions of MiSleep will use the `channel controller`, like analysis, filter, scaler and so on.
 
 #### [Label](#label)
 
-![](/_posts/resources/Pasted%20image%2020240117204154.png)
+![](resources/Pasted%20image%2020240117204154.png)
 
 One of the core functions of MiSleep.
 
 - When the `Start-End` mode (default) is selected, you can select an time period by click in the signal area, and there will be two <b style="color: green">green</b> lines as we mentioned in the [Signal area](#signal-area). Then you can choose whether to label this period of time by `Label` button or the four `sleep state` buttons.
 - By clicking the `Label` button, MiSleep will pop up a select list in the signal area (See picture below). You can choose a label for this period of selected time, or **self-define a label name** by click the item.
 
-![select label](/_posts/resources/Pasted%20image%2020240118171808.png)
+![select label](resources/Pasted%20image%2020240118171808.png)
 
 - If you click the other four sleep state buttons, which are `NRE1: M`, `2: REM`, `3: Wake`, `4: INIT`, MiSleep will label the selected time period to the corresponding state [Signal area](#signal-area). Or you can use **shortcut (The number in each sleep state button)** for labeling more quickly.
 
@@ -145,31 +145,31 @@ One of the core functions of MiSleep.
 
 #### [Filter](#filter)
 
-![](/_posts/resources/Pasted%20image%2020240118191050.png)
+![](resources/Pasted%20image%2020240118191050.png)
 
-With the filter, you can filter the noises under 0.5 Hz or 1 Hz, and you are labeling `spindle`, you can use `BandPass` filter to get the 10~16 Hz data (variance in different paper) from EEG data. Filter will add a new channel in the channel list. For more detail, check the filter data section in [EEG analysis workflow](/_posts/resources/EEG_analysis_workflow.html).
+With the filter, you can filter the noises under 0.5 Hz or 1 Hz, and you are labeling `spindle`, you can use `BandPass` filter to get the 10~16 Hz data (variance in different paper) from EEG data. Filter will add a new channel in the channel list. For more detail, check the filter data section in [EEG analysis workflow](resources/EEG_analysis_workflow.html).
 
 #### [Analysis](#analysis)
 
-Only works in the `Start-End` mode in [Label](#label). After selecting a signal area, you can click the `Spectrum` button, MiSleep will pop a dialog (see picture below), there are power spectral density figure and color map of spectrum. You can save them in different format, here we highly recommend `.pdf` format, which is a vector storage format, so that you can do the downstream edit. For more details, check the spectrum section in [EEG analysis workflow](/_posts/resources/EEG_analysis_workflow.html).
-![analysis](/_posts/resources/Pasted%20image%2020240118194042.png)
+Only works in the `Start-End` mode in [Label](#label). After selecting a signal area, you can click the `Spectrum` button, MiSleep will pop a dialog (see picture below), there are power spectral density figure and color map of spectrum. You can save them in different format, here we highly recommend `.pdf` format, which is a vector storage format, so that you can do the downstream edit. For more details, check the spectrum section in [EEG analysis workflow](resources/EEG_analysis_workflow.html).
+![analysis](resources/Pasted%20image%2020240118194042.png)
 
 #### [Time controller](#time-controller)
 
-![](/_posts/resources/Pasted%20image%2020240118194319.png)
+![](resources/Pasted%20image%2020240118194319.png)
 
 - The **date-time editor** shows the time of current signal window, the time format is `dd:hh:mm:ss`. The **number editor** is the relative second from the data beginning. You can set a time in the date-time editor or number editor to make the time jump.
 - A **drop box** can help you adjust the time duration display in the signal area. There are some high frequency settings, or you can self-define the duration by check the `Custom(epochs)` to set a specific duration based on epoch.
 
 #### [Save data](#save-data)
 
-![](/_posts/resources/Pasted%20image%2020240118201520.png)
+![](resources/Pasted%20image%2020240118201520.png)
 
 There are two methods you can save your data. One is `pure save`, you can select some channels to save by selecting some channels in the channel list and click the `Save selevted channel(s)` button, or just save all the channels to a `.mat` file by clicking the `Save` button.
 Or, you can merge different sleep states' data into some individual data files with labels, like when you labeled all the data with sleep states, you can click the `Merge` button to save 3 (4 when you have some unlabeled data) data files separately (`nrem_data.mat`, `rem_data.mat` and `wake_data.mat`, see picture below). The `Merge as sleep stage(s)` button means you can select some channels for merging. This can help you do the downstream analysis, such as a specific state's analysis.
 
-![merge data](/_posts/resources/Pasted%20image%2020240118202446.png)
+![merge data](resources/Pasted%20image%2020240118202446.png)
 
 ## [Others](#others)
 
-See [EEG analysis workflow](/_posts/resources/EEG_analysis_workflow.html).
+See [EEG analysis workflow](resources/EEG_analysis_workflow.html).
