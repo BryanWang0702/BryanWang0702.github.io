@@ -10,7 +10,7 @@ MiSleep is an easy-to-use software for sleep EEG/EMG data scoring and analysis.
 ## Table of contents
 
 - [Installation](#installation)
-- [Launch MiSleep](#launch-miSleep)
+- [Launch MiSleep](#launch-misleep)
 - [Initial window](#initial-window)
   - [Load data](#load-data)
   - [Auto stage](#auto-stage)
