@@ -7,6 +7,8 @@ slug: MiSleep manual
 
 MiSleep is an easy-to-use software for sleep EEG/EMG data scoring and analysis.
 
+[Source code](https://github.com/bian-lab/MiSleep)
+
 ## Table of contents
 
 - [Installation](#installation)
