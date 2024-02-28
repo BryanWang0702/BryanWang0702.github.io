@@ -158,7 +158,7 @@ As the tdt recording system may have some noise at the start of recording, and s
 
 ---
 ## [Extract data](#extract-data)
-For data extraction, see official doc of [Offline Data Analysis Tools](https://www.tdt.com/docs/sdk/offline-data-analysis/offline-data-matlab/getting-started/). Here is a simple code for extraction:
+For data extraction, see official doc of [Offline Data Analysis Tools](https://www.tdt.com/docs/sdk/offline-data-analysis/offline-data-matlab/getting-started/). Here a simple script for extraction:
 ```matlab
 SDKPATH = 'D:\TDTSDK'; % or whatever path you extracted the SDK zip into
 addpath(genpath(SDKPATH));
