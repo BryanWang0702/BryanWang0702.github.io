@@ -1,19 +1,24 @@
---- 
-layout: default 
+---
+layout: default
 ---
 <header>
-    <br/> {%-if site.theme_config.show_description-%}
+    <br /> {%-if site.theme_config.show_description-%}
     <p>{{ site.description }}</p>
     {%-endif-%}
 </header>
 <img src="../new_good_one.jpg" style="width: 250px; height: 333px;" alt="Xueqiangwang.jpg" />
-<br/>
+<br />
 <h1>Xueqiang Wang</h1>
-<p>I am currently a research assistant at the <a href="https://bianlab.site">Bian Lab</a>. My reserach interests including sleep EEG/EMG analysis, animal behaviors, neuroscience about sleep.
+<p>I am currently a research assistant at the <a href="https://bianlab.site">Bian Lab</a>. My reserach interests
+    including sleep EEG/EMG analysis, animal behaviors, and neuroscience about sleep.
 
 </p>
 <p>Brfore joining the Bian Lab, I was a member of <a href="https://cqutnlp.com">
-      Natural Languages Processing Laboratory of CQUT</a>, where I mainly researched text mining, text generation and text retrival. I received the B.S. degree from Chongqing University of Technology in 2023. I am going to do my phd in 2024.
+        Natural Languages Processing Laboratory of CQUT</a>, where I mainly researched text mining, text generation and
+    text retrival. I received the B.S. degree from Chongqing University of Technology in 2023 and here is the <a
+        href="../resources/thesis/An AI writing system based on outline planning.pdf">thesis</a>. I am going to persue
+    my
+    phd in 2024 Fall.
 
 </p>
 {%-include menu_item.html collection=site.data.menu.entries-%} {{ content }}
