@@ -7,10 +7,14 @@ entries:
       - title: "Research Assistant, <a href='https://westlake.edu.cn'>Westlake University</a>"
       - title: "Hangzhou, China"
       - title: "Email: wangxueqiang@westlake.edu.cn"
+      - title: CV [PDF]
+        url: https://bryanwang.cn/resources/XueqiangWang_CV.pdf
       - title: Twitter
         url: https://twitter.com/BryanWang0_o
       - title: Github
         url: https://github.com/BryanWang0702
+      - title: MiSleep
+        url: https://github.com/BryanWang0702/MiSleep
 
   - title: All posts
     post_list:
