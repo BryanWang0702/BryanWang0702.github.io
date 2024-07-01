@@ -3,7 +3,7 @@ layout: post
 slug: EEG&EEMG recording manual
 ---
 
-An [official manual for synapse](https://www.tdt.com/docs/synapse/) from Tucker-Davis Technologies (TDT). And also some [video tutorials](https://www.tdt.com/docs/synapse/training-videos/).
+An [official manual for synapse](https://www.tdt.com/docs/synapse/) from Tucker-Davis Technologies (TDT). And also some [video tutorials](https://www.tdt.com/docs/synapse/training-videos/). We use the [PZA SI-4 preamplifier](https://www.tdt.com/docs/hardware/sim-subject-interface-module/) and [RZ10 LUX integrated processor](https://www.tdt.com/docs/hardware/rz10-lux-integrated-processor/) hardware.
 
 This manual contains some most frequently used functions for sleep EEG/EMG recording.
 
@@ -64,50 +64,60 @@ Here we use the `example` of one EEG (1st pin of the electrode), two EMG (left a
 
 1. Add a `Neural Signal Referencer`. 
 
-> ![](resources/Pasted%20image%2020240202141512.png)
+![](resources/Pasted%20image%2020240202141512.png)
 
 2. Setup the channel and some basic information of the referencer.
 
-> ![](resources/Pasted%20image%2020240202141559.png)
-> ![](resources/Pasted%20image%2020240202141627.png)
-> In the `Select Channel Range` dialog, the `First`'s value should be your first channel of the bank. And the `Count`'s value should be the pin number of your electrode. Here in the example, `First`'s value should be `1` and count should be `4`.
-> Don't forget to check the `Output Reference Signal(s)` and `Save Reference Signal(s)`, and set the proper values, unless you don't want it.   
+![](resources/Pasted%20image%2020240202141559.png)
+![](resources/Pasted%20image%2020240202141627.png)
+In the `Select Channel Range` dialog, the `First`'s value should be your first channel of the bank. And the `Count`'s value should be the pin number of your electrode. Here in the example, `First`'s value should be `1` and count should be `4`.
+Don't forget to check the `Output Reference Signal(s)` and `Save Reference Signal(s)`, and set the proper values, unless you don't want it.   
 
 3. Add stream processor to the referencer and setup 
 
-> Add a stream processor under the referencer.
-> ![](resources/Pasted%20image%2020240202154029.png)
-> 
-> Set up the channels of the stream processor, which the `First` and `Count` value is relative to the Referencer here. For the `example`, the `First`'s value here is 1 which means the EEG is the 1st pin of electrode, and `Count`'s value is 1 means we only got one EEG pin. Choose the type you want to use this stream for in the `General -> Neural Type` box.
-> 
-> ![](resources/Pasted%20image%2020240202155008.png)
-> 
-> Then you need to set the filter of the stream, which is in the `Filtering` area.
-> ![](resources/Pasted%20image%2020240202160731.png)
-> 
-> We recommend to set as follows (if you don't have special experimental requirements):
-> - **Highpass:** 0.3 Hz for EEG recording and 10 Hz for EMG recording.
-> - **Notch(s):** 50-100-150 Hz to avoid current noise.
-> - **Lowpass:** 70 Hz or 100 Hz for EEG and 100 Hz for EMG.
-> 
-> After that, it's the final step, you need to identify the name of your stream processor, and the sample rate. The `identifier` name follows the stream processor's name by default. The sample rate we recommend is `305` Hz,and the scaling we recommend is `Milli`.
-> ![](resources/Pasted%20image%2020240202160347.png)
+Add a stream processor under the referencer.
 
-> EMG stream processor **is almost the same**. In this example, the channel of EMG setup is `First: 3, Count: 2` which means the EMG is start from the 3rd pin and totally two.
+![](resources/Pasted%20image%2020240202154029.png)
+
+Set up the channels of the stream processor, which the `First` and `Count` value is relative to the Referencer here. For the `example`, the `First`'s value here is 1 which means the EEG is the 1st pin of electrode, and `Count`'s value is 1 means we only got one EEG pin. Choose the type you want to use this stream for in the `General -> Neural Type` box.
+
+![](resources/Pasted%20image%2020240202155008.png)
+
+Then you need to set the filter of the stream, which is in the `Filtering` area.
+
+![](resources/Pasted%20image%2020240202160731.png)
+
+We recommend to set as follows (if you don't have special experimental requirements):
+- **Highpass:** 0.3 Hz for EEG recording and 10 Hz for EMG recording.
+- **Notch(s):** 50-100-150 Hz to avoid current noise.
+- **Lowpass:** 70 Hz or 100 Hz for EEG and 100 Hz for EMG.
+
+After that, it's the final step, you need to identify the name of your stream processor, and the sample rate. The `identifier` name follows the stream processor's name by default. The sample rate we recommend is `305` Hz,and the scaling we recommend is `Milli`.
+![](resources/Pasted%20image%2020240202160347.png)
+
+EMG stream processor **is almost the same**. In this example, the channel of EMG setup is `First: 3, Count: 2` which means the EMG is start from the 3rd pin and totally two.
 
 --- 
 ### [Preview](#preview)
 After all those settings, you can preview your signal in the `Preview` mode by clicking the `Preview` button.
+
 ![](resources/Pasted%20image%2020240202161257.png)
-> 
-> And you will see like the follow picture. Now it's the original signal, `with no reference set`, and you can see the EEG and EMG have noise. You need to click the corresponding REF (Here is the 'mouse1' in the top bar), ans select one channel as your reference channel.
-> ![](resources/Pasted%20image%2020240202170155.png)
-> This is the original state of reference setting, it's `off`.
-> ![](resources/Pasted%20image%2020240202170404.png)
-> And you need to set it to your reference channel (the pin of your electrode seen as reference, here in the example is the 2nd pin).
-> ![](resources/Pasted%20image%2020240202170524.png)
-> After setting the reference, you will see the REF channel get signal input.
-> ![](resources/Pasted%20image%2020240202170623.png)
+
+And you will see like the follow picture. Now it's the original signal, `with no reference set`, and you can see the EEG and EMG have noise. You need to click the corresponding REF (Here is the 'mouse1' in the top bar), ans select one channel as your reference channel.
+
+![](resources/Pasted%20image%2020240202170155.png)
+
+This is the original state of reference setting, it's `off`.
+
+![](resources/Pasted%20image%2020240202170404.png)
+
+And you need to set it to your reference channel (the pin of your electrode seen as reference, here in the example is the 2nd pin).
+
+![](resources/Pasted%20image%2020240202170524.png)
+
+After setting the reference, you will see the REF channel get signal input.
+
+![](resources/Pasted%20image%2020240202170623.png)
 
 `Note:` if you use the [without referencer](#without-referencer) mode, you have no need to set the `reference` channel, since the reference will record as a EEG signal.
 
@@ -115,27 +125,36 @@ After all those settings, you can preview your signal in the `Preview` mode by c
 ### [Others](#others)
 #### [Flow plot](#flow-plot)
 Here you can select channels to plot or not. And you can plot different mouse (subject) in different `Flow plot`, just by dragging the channel you want to the `Add…` column. 
-> ![](resources/Pasted%20image%2020240202171340.png)
-> `Note: ` No matter you plot the channel or not, and no matter which flow plot is your channel in, they will `all be recorded` in the record mode. Which means once you set the channel in the `Idle` mode, they will be recorded. So if there are any channel nobody wants, delete it from the `Idle` mode.
+
+![](resources/Pasted%20image%2020240202171340.png)
+
+`Note: ` No matter you plot the channel or not, and no matter which flow plot is your channel in, they will `all be recorded` in the record mode. Which means once you set the channel in the `Idle` mode, they will be recorded. So if there are any channel nobody wants, delete it from the `Idle` mode.
 
 #### [Tips](#tips)
->  **Some tips about preview mode and record mode.** 
->  ![](resources/Pasted%20image%2020240202170929.png)
-> The first button will auto adjust the scale of all channels, and the second button can help adjust the second of one page. Default is 10 second, you can set it to 30 seconds or 60 seconds.
-> 
-> Hang your mouse on the channel, and press `SHIFT` with your mouse `left` button, with your mouse up/down, you can adjust the signal’s scale conveniently. And `CTRL` with the mouse `left` button, can shift the signal. Which will do the same thing with you right clicking the green area (See picture below)
-> ![](resources/Pasted%20image%2020240202171027.png)
+**Some tips about preview mode and record mode.** 
+
+![](resources/Pasted%20image%2020240202170929.png)
+
+The first button will auto adjust the scale of all channels, and the second button can help adjust the second of one page. Default is 10 second, you can set it to 30 seconds or 60 seconds.
+
+Hang your mouse on the channel, and press `SHIFT` with your mouse `left` button, with your mouse up/down, you can adjust the signal’s scale conveniently. And `CTRL` with the mouse `left` button, can shift the signal. Which will do the same thing with you right clicking the green area (See picture below)
+
+![](resources/Pasted%20image%2020240202171027.png)
 
 #### [Recording](#recording)
-> After setup, you can start recording by click the `red` Record button. And you will see the same thing with what you saw in the preview mode.
-> ![](resources/Pasted%20image%2020240202171110.png)
-> Perfect signal!
+After setup, you can start recording by click the `red` Record button. And you will see the same thing with what you saw in the preview mode.
+
+![](resources/Pasted%20image%2020240202171110.png)
+
+Perfect signal!
 
 #### [Data saving](#data-saving)
 `Menu -> Preferences -> Data Saving`, You can set the data saving path, and `Before each recording, especially auto start (See the auto start part), you need to ensure block Naming is Auto,`   unless you want to specify the name when the recording begin. (It will pop up an editor and the record won’t start unless you enter a block name.)
+
 ![](resources/Pasted%20image%2020240202172310.png)
 
 The data will be saved under the path you set in the `Path to tanks`. And the path is `Experiment-date-time/Subject-date-time`, the Experiment-date-time is the time you create the Experiment, and the Subject-date-time is the time started recording. (See picture below)
+
 ![](resources/Pasted%20image%2020240202172228.png)
 
 These are the original data file of TDT, and you can extract your data from them. (See Extract data section).
@@ -143,37 +162,41 @@ These are the original data file of TDT, and you can extract your data from them
 #### [ZBusmon restart](#zbusmon-restart)
 As TDT support said, it’s recommended to restart the ZBusmon before each recording (especially long time recording). The pathway is:
 `Close synapse -> Open ZBusmon on the desktop -> Reboot System -> Done`
+
 ![](resources/Pasted%20image%2020240202172805.png)
 
 #### [Auto start](#auto-start)
 You can also choose auto start.
 `Auto start -> 自动开始程序 -> Properties -> Triggers`, 
 Edit the time you want to start recording. Make sure the status is Enabled.
+
 ![](resources/Pasted%20image%2020240202173455.png)
 
 It will raise the `auto.bat` on the desktop (**DO NOT CLICK IT MANUALLY**), and run the `Autostart.m` script. You can set the parameters in the `Autostart.m` file.
+
 ![](resources/Pasted%20image%2020240202174647.png)
 
 As the tdt recording system may have some noise at the start of recording, and starting the system takes about 30 seconds, here we recommend to start your recording 10 minutes earlier. 
 
 ---
 ## [Extract data](#extract-data)
-For data extraction, see official doc of [Offline Data Analysis Tools](https://www.tdt.com/docs/sdk/offline-data-analysis/offline-data-matlab/getting-started/). Here a simple script for extraction:
+For data extraction, see official doc of [Offline Data Analysis Tools](https://www.tdt.com/docs/sdk/offline-data-analysis/offline-data-matlab/getting-started/). Here a simple script for extraction to fit [MiSleep](https://bryanwang.cn/MiSleep/):
 ```matlab
 SDKPATH = 'D:\TDTSDK'; % or whatever path you extracted the SDK zip into
 addpath(genpath(SDKPATH));
 
-data = TDTbin2mat('./Subject1-231109-182005');
+tdt_data = TDTbin2mat('./Subject1-231109-182005');
 
-% Mouse 4
-% EEG data
-mouse4(1, :) = data.streams.EEG4.data(:, :);
-% Raw EMG data
-mouse4(2:3, :) = data.streams.EMG4.data(1:2, :);
-% Differential of 2 EMGs
-mouse4(4, :) = diff(mouse4(2:3, :));
-% Reference
-mouse4(5, :) = data.streams.Mou4.data(:, :);
+data.EEG_F = tdt_data.streams.EEG1.data(1, :);
+data.EEG_P = tdt_data.streams.EEG1.data(2, :);
+data.EEG_DIFF = data.EEG_F - data.EEG_P
+data.EMG_1 = tdt_data.streams.EMG1.data(1, :);
+data.EMG_2 = tdt_data.streams.EMG1.data(2, :);
+data.EMG_DIFF = data.EMG_1 - data.EMG_2;
+data.REF = data.streams.mou1.data(1, :);
+data.channels = {'EEG_F' 'EEG_P' 'EEG_DIFF' 'EMG_1' 'EMG_2' 'EMG_DIFF' 'REF'};
+data.sf = {305.1758 305.1758 305.1758 305.1758 305.1758 305.1758 305.1758};
+data.time = {'20240409-18:00:00'};  
 ```
 
 #### [Data split](#data-split)
