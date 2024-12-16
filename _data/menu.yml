@@ -16,9 +16,3 @@ entries:
       - title: MiSleep
         url: https://github.com/BryanWang0702/MiSleep
 
-  - title: All posts
-    post_list:
-      limit: 5
-      show_more: true
-      show_more_text: More...
-      show_more_url: archive.html
